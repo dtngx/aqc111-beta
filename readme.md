@@ -45,6 +45,25 @@ Currently I only confirmed QNAP QNA-UC5G1T works. If you got other products and 
 
 https://www.synology.com/en-us/knowledgebase/SRM/help/SRM/PkgManApp/install_buy
 
+
+## Repackaging
+In a Linux x86-64 environment:
+
+mkdir -p /toolkit
+apt-get install cifs-utils python3 python3-pip git
+git clone https://github.com/SynologyOpenSource/pkgscripts-ng
+cd /toolkit/pkgscripts-ng/
+git checkout DSM7.2
+./EnvDeploy -v 7.2 -p geminilake (replace it with your CPU GEN)
+mkdir source
+cd source/
+git clone https://github.com/dtngx/aqc111.git
+cd /toolkit/pkgscripts-ng/
+./PkgCreate.py -v 7.2 -p geminilake -c aqc111
+
+After that, you can find two spks in
+/toolkit/build-env/ds.(your CPU GEN)/image/packages/
+
 ## How to configure
 
 You can configure the IP addresses and MTU of the added NICs from the DSM UI in the same way as the built-in NICs.
