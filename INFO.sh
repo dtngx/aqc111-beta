@@ -13,10 +13,10 @@ thirdparty="yes"
 
 [ "$(caller)" != "0 NULL" ] && return 0
 
-if [ "${PRODUCT_VERSION}" = "7.0" ]; then
-    os_min_ver="7.0-40000"
+if [ "${PRODUCT_VERSION}" = "7.2" ]; then
+    os_min_ver="7.2-64216"
     RUN_AS="package"
-    INSTRUCTION=' [DSM7 note] The installation will fail the first time. See the readme for details.'
+    INSTRUCTION=' [DSM7.2 note] The installation will fail the first time. See the readme for details.'
 else
     RUN_AS="root"
 fi
