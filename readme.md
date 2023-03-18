@@ -57,7 +57,7 @@ git checkout DSM7.2
 ./EnvDeploy -v 7.2 -p geminilake (replace it with your CPU GEN)
 mkdir source
 cd source/
-git clone https://github.com/dtngx/aqc111.git
+git clone https://github.com/dtngx/aqc111-beta.git
 cd /toolkit/pkgscripts-ng/
 ./PkgCreate.py -v 7.2 -p geminilake -c aqc111
 
